@@ -39,7 +39,6 @@ get_binary_suffix() {
   [ "Linux" = "$(uname)" ] && echo "" || echo "-darwin"
 }
 
-
 download_release() {
   local version filename url suffix
   version="$1"
