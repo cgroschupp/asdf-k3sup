@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -exuo pipefail
+set -euo pipefail
 
 # TODO: Ensure this is the correct GitHub homepage where releases can be downloaded for k3sup.
 GH_REPO="https://github.com/alexellis/k3sup"
