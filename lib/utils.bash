@@ -34,13 +34,20 @@ list_all_versions() {
   list_github_tags
 }
 
+
+get_binary_suffix() {
+  [ "Linux" = "$(uname)" ] && echo "" || echo "-darwin"
+}
+
+
 download_release() {
-  local version filename url
+  local version filename url suffix
   version="$1"
   filename="$2"
+  suffix=$(get_binary_suffix)
 
   # TODO: Adapt the release URL convention for k3sup
-  url="$GH_REPO/releases/download/${version}/k3sup"
+  url="$GH_REPO/releases/download/${version}/k3sup${suffix}"
 
   echo "* Downloading k3sup release $version..."
   curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
