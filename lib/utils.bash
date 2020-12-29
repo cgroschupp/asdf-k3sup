@@ -34,7 +34,6 @@ list_all_versions() {
   list_github_tags
 }
 
-
 get_binary_suffix() {
   [ "Linux" = "$(uname)" ] && echo "" || echo "-darwin"
 }
